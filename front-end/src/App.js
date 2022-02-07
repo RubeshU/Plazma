@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import HomePage from './Pages/HomePage/index';
+import LiveRequestsPage from "./Pages/LiveRequestsPage";
+import DonorPage from "./Pages/DonorPage";
+import ReceptorPage from "./Pages/ReceptorPage";
+import ContactUsPage from "./Pages/ContactUsPage";
+import Navigationbar from "./Components/NavigationBar";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <>
+  <BrowserRouter>
+  {/* <NavLink to="donor" style={({ isActive})=> {
+    return isActive ? {
+      color: "red"
+    } : {
+      color: "blue"
+    }
+  }}>DONOR</NavLink>
+  <NavLink to="receptor" style={({ isActive})=> {
+    return isActive ? {
+      color: "red"
+    } : {
+      color: "blue"
+    }
+  }}>DONOR</NavLink> */}
+  <Navigationbar />
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="live-requests" element={<LiveRequestsPage />} />
+      <Route path="donor" element={<DonorPage />} />
+      <Route path="receptor" element={<ReceptorPage />} />
+      <Route path="contact-us" element={<ContactUsPage />} />
+    </Routes>
+  </BrowserRouter>
+  </>;
 }
 
 export default App;
