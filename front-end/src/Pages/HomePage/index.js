@@ -1,4 +1,5 @@
 import Features from "./components/Features";
+import Footer from "./components/Footer";
 import Jumbotron from "./components/Jumbotron";
 import WhoCanDonate from "./components/WhoCanDonate";
 
@@ -8,7 +9,7 @@ const Home = () => {
             <Jumbotron />
             <Features />
             <WhoCanDonate />
-            
+            <Footer />
         </div>
     );
 }
