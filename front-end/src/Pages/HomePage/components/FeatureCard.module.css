@@ -1,0 +1,20 @@
+.feature_card{
+    height: 230px;
+    width: 287px;
+}
+
+.image{
+    height: 95px;
+    width: 85px;
+}
+
+.heading{
+    color: #750202;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.text{
+    color: #848081;
+    text-align: center;
+}

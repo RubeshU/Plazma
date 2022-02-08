@@ -1,0 +1,12 @@
+.button_area{
+    background-color: #DB2F47;
+    height: 45px;
+    width: 109px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 38px;
+    cursor: pointer;
+}

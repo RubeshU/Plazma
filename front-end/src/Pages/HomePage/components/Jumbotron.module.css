@@ -1,0 +1,10 @@
+.jumbotron h1{
+    font-size: 40px;
+    color: #750202;
+}
+
+.vertical_line{
+    width: 1px;
+    height: 46px;
+    background-color: #750202;
+}

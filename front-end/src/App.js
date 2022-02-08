@@ -6,27 +6,20 @@ import DonorPage from "./Pages/DonorPage";
 import ReceptorPage from "./Pages/ReceptorPage";
 import ContactUsPage from "./Pages/ContactUsPage";
 import Navigationbar from "./Components/NavigationBar";
+import BloodDetailCard from "./Pages/HomePage/components/BloodDetailCard";
+import { BloodList } from "./Data/BloodInfo";
 
 function App() {
   return <>
   <BrowserRouter>
-  {/* <NavLink to="donor" style={({ isActive})=> {
-    return isActive ? {
-      color: "red"
-    } : {
-      color: "blue"
-    }
-  }}>DONOR</NavLink>
-  <NavLink to="receptor" style={({ isActive})=> {
-    return isActive ? {
-      color: "red"
-    } : {
-      color: "blue"
-    }
-  }}>DONOR</NavLink> */}
   <Navigationbar />
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<HomePage />}>
+        {BloodList.map((item,index) => (
+        <Route key={BloodList[index].type} path={BloodList[index].path} element={<BloodDetailCard key={BloodList[index].type} data={BloodList[index]} />}>
+        </Route>
+      ))}
+      </Route>             
       <Route path="live-requests" element={<LiveRequestsPage />} />
       <Route path="donor" element={<DonorPage />} />
       <Route path="receptor" element={<ReceptorPage />} />
