@@ -16,11 +16,13 @@ export const BloodNavActive = {
     borderRadius: "50px",
     padding: "12px 27px",
     textDecoration: "none",
+    fontWeight: "500",
 }
 
 export const BloodNavInActive = {
     color: "black",
     backgroundColor: "#E5E5E5",
+    fontWeight: "500",
     borderRadius: "50px",
     padding: "12px 27px",
     textDecoration: "none",
@@ -30,4 +32,10 @@ export const BloodNavDiv = {
     padding: "12px 27px",
     margin: "0.2rem",
 }
+
+export  const center = {
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
+  };
 

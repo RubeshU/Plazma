@@ -1,0 +1,10 @@
+@media screen and (max-width: 992px) {
+    .image{
+        transform: rotate(90deg);
+    }    
+}
+
+.image{
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+}

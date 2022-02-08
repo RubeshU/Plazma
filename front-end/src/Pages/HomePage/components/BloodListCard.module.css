@@ -1,0 +1,27 @@
+.card_area{
+    background-color: #FEF7F8;
+    height: 208px;
+    width: 217px !important;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items : center;
+}
+
+.blood_name{
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    background-color: #E5697A;
+}
+
+.card_title{
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 30px;
+}
