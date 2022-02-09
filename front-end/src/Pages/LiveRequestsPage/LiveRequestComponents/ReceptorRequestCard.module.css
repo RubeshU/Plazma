@@ -1,0 +1,161 @@
+.border_one{
+    background-color: #DD3B51;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.border_two{
+    background-color: #E9808E;
+    padding: 16px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.blood_type{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    padding: auto 1rem;
+    background-color: white;
+    font-size: 24px;
+    font-weight: bold;
+    width: 87px;
+    height: 42px;
+    margin: 1rem;
+}
+
+.receptor_name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    font-size: 24px;
+    padding: auto 1rem;
+    background-color: white;
+    font-weight: bold;
+    width: 287px;
+    height: 42px;
+    margin: 1rem;
+}
+
+.request_status{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    padding: auto 1rem;
+    font-size: 24px;
+    font-weight: bold;
+    width: 192px;
+    height: 42px;
+    margin: 1rem;
+}
+
+.urgent{
+    background-color: #543D7E;
+    color: white;
+}
+
+.fulfilled{
+    background-color: #45C619;
+    color: black;
+}
+
+.registered{
+    background-color: #F9C910;
+}
+
+.text{
+    display: inline;
+    padding: 1rem;
+    font-size: 20px;
+    color: white;
+}
+
+#description{
+    background-color: #A03136;
+    margin: 3rem 2.5rem;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: white;
+    font-size: 24px;
+}
+
+.unit_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 60px;
+    width: 172px;
+    font-size: 30px;
+    margin-left: 2rem;
+    border-radius: 30px;
+}
+
+.donate_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 231px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin-right: 2rem;
+    border-radius: 20px;
+    background-color: #DB2F47;
+}
+
+@media screen and (max-width: 555px) {
+    .unit_button{
+        height: 45px;
+        width: 100px;
+        font-size: 22px;
+        margin-left: 1rem;
+        border-radius: 30px;
+    }
+    
+    .donate_button{
+        height: 45px;
+        width: 125px;
+        font-size: 18px;
+        border-radius: 20px;
+    }
+    #description{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .blood_type{
+        font-size: 18px;
+        width: 64px;
+        height: 30px;
+        margin: 1rem;
+    }
+    
+    .receptor_name{
+        font-size: 18px;
+        width: 214px;
+        height: 30px;
+        margin: 1rem;
+    }
+    
+    .request_status{
+        font-size: 18px;
+        width: 144px;
+        height: 30px;
+        margin: 1rem;
+    }
+}
+
+@media screen and (max-width: 550px){
+    #description{
+        margin: 3rem 0.5rem;
+    }
+}

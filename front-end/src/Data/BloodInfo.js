@@ -48,3 +48,39 @@ export const BloodList = [
         receiveFrom: ["A+","A-","O+","O-"],
     },
 ];
+
+export const receptorInfo = [
+    {
+        id: "1",
+        name: "Rubesh U",
+        bloodType: "O+",
+        status: "URGENT",
+        city: "Chennai",
+        age: "20",
+        hospital: "######hospital",
+        description: "KJHWLKdjlqwjdlaskl;askd;sakdlskdljadl;ksa;ldkas;dls’dla’;d’as;dmadlkelknfdk,mfkmdlkmfldkmfkdsmfklsmfklmsdkfmdlkmflskdmfdslkfdskfksdjfkjfkdsjfjfiwrejflwejfkdnfkdnknfdfndknfkdnfkdfnkdnfkdnfdknfdsknflkdjfkljfff",
+        units: "3",
+    },
+    {
+        id: "2",
+        name: "Sudarsan MS",
+        bloodType: "O-",
+        status: "REGISTERED",
+        city: "Chennai",
+        age: "20",
+        hospital: "######hospital",
+        description: "KJHWLKdjlqwjdlaskl;askd;sakdlskdljadl;ksa;ldkas;dls’dla’;d’as;dmadlkelknfdk,mfkmdlkmfldkmfkdsmfklsmfklmsdkfmdlkmflskdmfdslkfdskfksdjfkjfkdsjfjfiwrejflwejfkdnfkdnknfdfndknfkdnfkdfnkdnfkdnfdknfdsknflkdjfkljfff",
+        units: "2",
+    },
+    {
+        id: "3",
+        name: "Rubesh U",
+        bloodType: "O-",
+        status: "FULFILLED",
+        city: "Chennai",
+        age: "20",
+        hospital: "######hospital",
+        description: "KJHWLKdjlqwjdlaskl;askd;sakdlskdljadl;ksa;ldkas;dls’dla’;d’as;dmadlkelknfdk,mfkmdlkmfldkmfkdsmfklsmfklmsdkfmdlkmflskdmfdslkfdskfksdjfkjfkdsjfjfiwrejflwejfkdnfkdnknfdfndknfkdnfkdfnkdnfkdnfdknfdsknflkdjfkljfff",
+        units: "4",
+    },
+];
