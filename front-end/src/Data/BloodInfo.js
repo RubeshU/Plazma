@@ -1,6 +1,6 @@
 export const BloodList = [
     {
-        path:"OP",
+        path:"",
         type: "O+",
         giveTo: ["O+","A+","AB+"],
         receiveFrom: ["O+","O-"],

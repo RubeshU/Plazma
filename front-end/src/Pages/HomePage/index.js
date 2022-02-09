@@ -1,7 +1,7 @@
 import Features from "./components/Features";
-import Footer from "./components/Footer";
 import Jumbotron from "./components/Jumbotron";
 import WhoCanDonate from "./components/WhoCanDonate";
+import Footer from "./components/Footer";
 
 const Home = () => {
     return (

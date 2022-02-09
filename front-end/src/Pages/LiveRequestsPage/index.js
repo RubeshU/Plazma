@@ -1,7 +1,9 @@
+import BreadCrumb from "./LiveRequestComponents/BreadCrumb";
+
 const LiveRequestsPage = () => {
     return (
         <div>
-            LiveRequests PAGE
+            <BreadCrumb title="Blood Requests from receptors" subtitle="Excuses never save a life, Blood donation does"/>
         </div>
     );
 }

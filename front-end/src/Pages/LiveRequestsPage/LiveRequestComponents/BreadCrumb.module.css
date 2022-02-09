@@ -1,0 +1,21 @@
+@media screen and (max-width: 991px) {
+    .image{
+        display: none !important;
+    }
+}
+
+.image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    height: 358px;
+    background-image: url("../LiveRequestAssets/BreadCrumbImage.png");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text_section{
+    margin-right: 10rem;
+}
