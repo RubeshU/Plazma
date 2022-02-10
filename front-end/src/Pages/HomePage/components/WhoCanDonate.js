@@ -5,7 +5,7 @@ import styles from "./WhoCanDonate.module.css";
 
 const WhoCanDonate = () => {
   return (
-    <div className="mt-5 mb-5">
+    <div className="mt-5 mb-5 pb-5">
       <div className={styles.heading}>To who you can donate?</div>
       <Container>
       <Row>

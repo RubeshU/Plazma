@@ -1,0 +1,15 @@
+.register_bg{
+    background-image: url("../HomeAssets/RegisterBg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.register_container{
+    padding: 11.3rem 0rem;
+}
+
+#card_body .register_card{
+    border-radius: 58px;
+    padding: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

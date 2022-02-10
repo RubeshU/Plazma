@@ -111,7 +111,7 @@
     background-color: #DB2F47;
 }
 
-@media screen and (max-width: 555px) {
+@media screen and (max-width: 771px) {
     .unit_button{
         height: 45px;
         width: 100px;

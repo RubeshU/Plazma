@@ -8,6 +8,8 @@ import ContactUsPage from "./Pages/ContactUsPage";
 import Navigationbar from "./Components/NavigationBar";
 import BloodDetailCard from "./Pages/HomePage/components/BloodDetailCard";
 import { BloodList } from "./Data/BloodInfo";
+import LoginPage from "./Pages/HomePage/components/LoginPage";
+import RegisterPage from "./Pages/HomePage/components/RegisterPage";
 
 function App() {
   return <>
@@ -19,7 +21,9 @@ function App() {
         <Route key={BloodList[index].type} path={BloodList[index].path} element={<BloodDetailCard key={BloodList[index].type} data={BloodList[index]} />}>
         </Route>
       ))}
-      </Route>             
+      </Route>           
+      <Route path="login" element={<LoginPage />} />  
+      <Route path="register" element={<RegisterPage />} />
       <Route path="live-requests" element={<LiveRequestsPage />} />
       <Route path="donor" element={<DonorPage />} />
       <Route path="receptor" element={<ReceptorPage />} />

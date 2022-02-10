@@ -2,13 +2,17 @@ import { Container, Image,Col, Row } from "react-bootstrap";
 import Button from "../../../Components/Button";
 import JumbotronImg from "../HomeAssets/JumbotronImg.png";
 import styles from "./Jumbotron.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Jumbotron = () => {
+    const navigate = useNavigate();
     const loginButtonHandler = () =>{
         console.log("Login Button Clicked");
+        navigate("/login");
     }
     const registerButtonHandler = () =>{
         console.log("Register Button Clicked");
+        navigate("/register");
     }
     return (
         <Container className={styles.jumbotron}>

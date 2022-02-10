@@ -33,6 +33,20 @@ export const BloodNavDiv = {
     margin: "0.2rem",
 }
 
+export const label = {
+    color: "#750202",
+    fontSize: "20px",
+    textAlign: "center",
+}
+
+export const labelInput = {
+    color: "#750202",
+    fontSize: "20px",
+    width: "300px",
+    textAlign: "left",
+    marginLeft: "-1rem",
+}
+
 export  const center = {
     display: "block",
     marginLeft: "auto",

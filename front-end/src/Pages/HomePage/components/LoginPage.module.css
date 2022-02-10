@@ -1,0 +1,13 @@
+.login_bg{
+    background-image: url("../HomeAssets/LoginBg.png");
+}
+
+.login_container{
+    padding: 11.3rem 0rem;
+}
+
+#card_body .login_card{
+    border-radius: 58px;
+    padding: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
