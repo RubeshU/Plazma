@@ -11,6 +11,7 @@ export const NavInActiveStyle = {
 };
 
 export const BloodNavActive = {
+    display: "inline-block",
     color: "white",
     backgroundColor: "#DB2F47",
     borderRadius: "50px",
@@ -20,6 +21,7 @@ export const BloodNavActive = {
 }
 
 export const BloodNavInActive = {
+    display: "inline-block",
     color: "black",
     backgroundColor: "#E5E5E5",
     fontWeight: "500",

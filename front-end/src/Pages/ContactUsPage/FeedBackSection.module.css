@@ -1,0 +1,31 @@
+.bg{
+    background-color: #FDEFF1;
+}
+
+.feedback_container{
+    padding: 4rem;
+}
+
+
+.heading{
+    color: #750202;
+    padding-bottom: 4rem;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: left;
+}
+
+.button_area{
+    background-color: #DB2F47;
+    height: 70px;
+    width: 209px;
+    display: flex;
+    font-size: 24px;
+    margin: 4rem 0rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 38px;
+    cursor: pointer;
+}

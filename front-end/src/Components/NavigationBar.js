@@ -49,7 +49,7 @@ const NavigationBar = () => {
               Donor
             </NavLink>
             <NavLink
-              to="/receptor"
+              to="/receptor/receptor-request"
               style={({ isActive }) => {
                 return isActive
                   ? NavActiveStyle

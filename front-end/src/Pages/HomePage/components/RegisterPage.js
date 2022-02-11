@@ -14,7 +14,7 @@ const RegisterPage = () => {
   const registerHandler = () => {
     navigate("/live-requests");
   };
-  const receptientName = useRef("");
+  const name = useRef("");
   const mobileNo = useRef("");
   const email = useRef("");
   const dob = useRef("");
@@ -67,10 +67,10 @@ const RegisterPage = () => {
               </Col>
               <Col md={6}>
                 <Input
-                  ref={receptientName}
+                  ref={name}
                   input={{
                     type: "text",
-                    placeholder: "receptient name",
+                    placeholder: "your name",
                   }}
                 />
               </Col>
@@ -86,7 +86,7 @@ const RegisterPage = () => {
                   ref={mobileNo}
                   input={{
                     type: "text",
-                    placeholder: "987654321",
+                    placeholder: "9876543210",
                   }}
                 />
               </Col>
@@ -94,7 +94,7 @@ const RegisterPage = () => {
             <Row>
               <Col md={6}>
                 <Container className="mt-2" style={labelInput}>
-                  E - Mail :
+                  Mail ID :
                 </Container>
               </Col>
               <Col md={6}>

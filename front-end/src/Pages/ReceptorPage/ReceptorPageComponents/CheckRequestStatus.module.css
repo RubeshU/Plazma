@@ -1,0 +1,44 @@
+
+
+#card_body .receptor_ip_card{
+    border-radius: 58px;
+    padding: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.outer_card{
+    background-color: white;
+    padding: 3rem;
+    border-radius: 54px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.inner_card{
+    padding: 3rem;
+    margin: 3rem 0rem;
+    font-size: 24px;
+    color: #750202;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+@media screen and (max-width: 525px) {
+    .inner_card{
+        font-size: 12px;
+    }
+    .outer_card{
+        padding: 3rem;
+    }
+}
+
+.urgent{
+     color: #543D7E;
+}
+
+.fulfilled{
+    color: #45C619;
+}
+
+.registered{
+    color: #F9C910;
+}
