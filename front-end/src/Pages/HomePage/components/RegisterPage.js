@@ -4,7 +4,6 @@ import Input from "../../../Components/Input";
 import {  label, labelInput } from "../../../Components/style";
 import Button from "../../../Components/Button";
 import Logo from "../../../assets/Logo.png";
-import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 import stylesIP from "../../../Components/Input.module.css";
@@ -226,7 +225,6 @@ const RegisterPage = () => {
           </Container>
         </Card>
       </Container>
-      <Footer />
     </div>
   );
 };

@@ -39,7 +39,7 @@ const NavigationBar = () => {
               Live Requests
             </NavLink>
             <NavLink
-              to="/donor"
+              to="/donor/your-profile"
               style={({ isActive }) => {
                 return isActive
                   ? NavActiveStyle
@@ -49,7 +49,7 @@ const NavigationBar = () => {
               Donor
             </NavLink>
             <NavLink
-              to="/receptor/receptor-request"
+              to="/receptor/request"
               style={({ isActive }) => {
                 return isActive
                   ? NavActiveStyle

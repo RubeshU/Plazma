@@ -1,4 +1,3 @@
-import Footer from "./Footer";
 import styles from "./LoginPage.module.css";
 import Input from "../../../Components/Input";
 import { useRef } from "react";
@@ -53,7 +52,6 @@ const LoginPage = () => {
           </Card>
         </Container>
       </div>
-      <Footer />
     </>
   );
 };

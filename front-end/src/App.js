@@ -12,6 +12,10 @@ import LoginPage from "./Pages/HomePage/components/LoginPage";
 import RegisterPage from "./Pages/HomePage/components/RegisterPage";
 import ReceptorRequestForm from "./Pages/ReceptorPage/ReceptorPageComponents/ReceptorRequestForm";
 import CheckRequestStatus from "./Pages/ReceptorPage/ReceptorPageComponents/CheckRequestStatus";
+import YourProfile from "./Pages/DonorPage/DonorPageComponents/YourProfile";
+import CurrentDonation from "./Pages/DonorPage/DonorPageComponents/CurrentDonation";
+import DonationHistory from "./Pages/DonorPage/DonorPageComponents/DonationHistory";
+import Footer from "./Pages/HomePage/components/Footer";
 
 function App() {
   return <>
@@ -27,15 +31,21 @@ function App() {
       <Route path="login" element={<LoginPage />} />  
       <Route path="register" element={<RegisterPage />} />
       <Route path="live-requests" element={<LiveRequestsPage />} />
-      <Route path="donor" element={<DonorPage />} />
+      <Route path="donor" element={<DonorPage />}>
+        <Route path="" element={<div />} />
+        <Route path="your-profile" element={<YourProfile />} />
+        <Route path="current-donation" element={<CurrentDonation />} />
+        <Route path="donation-history" element={<DonationHistory />} />
+      </Route>
       <Route path="receptor" element={<ReceptorPage />}>
 
         <Route path="" element={<div />} />
-        <Route path="receptor-request" element={<ReceptorRequestForm />} />
-        <Route path="receptor-status" element={<CheckRequestStatus />} />
+        <Route path="request" element={<ReceptorRequestForm />} />
+        <Route path="status" element={<CheckRequestStatus />} />
       </Route>
       <Route path="contact-us" element={<ContactUsPage />} />
     </Routes>
+    <Footer />
   </BrowserRouter>
   </>;
 }

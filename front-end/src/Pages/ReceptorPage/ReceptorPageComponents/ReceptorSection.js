@@ -9,7 +9,7 @@ const ReceptorSection = () => {
           <Row>
             <Col md={6} sm={6} align="center" style={{paddingTop: "5rem",paddingBottom: "2rem"}}>
               <NavLink
-                to="receptor-request"
+                to="request"
                 style={({ isActive }) => {
                   return isActive ? BloodNavActive : BloodNavInActive;
                 }}
@@ -17,7 +17,7 @@ const ReceptorSection = () => {
             </Col>
             <Col md={6} sm={6} align="center" style={{paddingTop: "5rem",paddingBottom: "2rem"}}>
             <NavLink
-                to="receptor-status"
+                to="status"
                 style={({ isActive }) => {
                   return isActive ? BloodNavActive : BloodNavInActive;
                 }}
