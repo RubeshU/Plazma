@@ -1,6 +1,6 @@
 const DonationHistory = () => {
     return (
-        <h1 style={{textAlign: "center",paddingBottom: "3rem"}}>Donation History Page</h1>
+        <h1 style={{textAlign: "center",paddingBottom: "3rem",marginBottom: "0rem"}}>Donation History Page</h1>
     );
 }
 
