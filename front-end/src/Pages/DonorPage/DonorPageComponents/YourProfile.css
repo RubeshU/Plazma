@@ -2,11 +2,28 @@
     box-shadow: #00000029 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     border-radius: 50px;
     background-color: white;
-    padding: 4rem 0rem;
-
+    padding: 4rem 4rem;
 }
 
 .profile_data{
     border-radius: 30px;
-    
+}
+
+.profile_data_1{
+    background-color: #E5697B;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    color: white;
+    padding: 1rem 12rem !important;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.profile_data_2{
+    background-color: #E5E5E5;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 1rem 12rem !important;
+    font-size: 120%;
+    font-weight: bold;
 }
