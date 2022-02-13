@@ -11,9 +11,9 @@ const YourProfile = () => {
                 </Col>
             </Row>
             
-            <h1 style={{textAlign:"center",color: "#761A19"}}> Sudarsan M S</h1>
+            <h1 style={{textAlign:"center",color: "#761A19",marginBottom: "2rem"}}> Sudarsan M S</h1>
 
-            <Container className="profile_data d-flex justify-content-center mt-5 mb-5">
+            <Container className="profile_data">
                 <Row>
                     <Col align="center" className="profile_data_1"> 
                         AGE
@@ -23,6 +23,62 @@ const YourProfile = () => {
                     </Col>
                 </Row>
             </Container>
+
+            <Container className="profile_data">
+                <Row>
+                    <Col align="center" className="profile_data_1"> 
+                        Date of Birth
+                    </Col>
+                    <Col align="center" className="profile_data_2">
+                        01-01-2003
+                    </Col>
+                </Row>
+            </Container>
+
+            <Container className="profile_data">
+                <Row>
+                    <Col align="center" className="profile_data_1"> 
+                        Blood Group
+                    </Col>
+                    <Col align="center" className="profile_data_2">
+                        O Negative 
+                    </Col>
+                </Row>
+            </Container>
+
+            <Container className="profile_data">
+                <Row>
+                    <Col align="center" className="profile_data_1"> 
+                        No of Donations
+                    </Col>
+                    <Col align="center" className="profile_data_2">
+                        2
+                    </Col>
+                </Row>
+            </Container>
+
+            <Container className="profile_data">
+                <Row>
+                    <Col align="center" className="profile_data_1"> 
+                        Current eligibility
+                    </Col>
+                    <Col align="center" className="profile_data_2">
+                        Not Eligible
+                    </Col>
+                </Row>
+            </Container>
+
+            <Container className="profile_data">
+                <Row>
+                    <Col align="center" className="profile_data_1"> 
+                        City
+                    </Col>
+                    <Col align="center" className="profile_data_2">
+                        Chennai 
+                    </Col>
+                </Row>
+            </Container>
+
         </Container>
         
     );

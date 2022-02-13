@@ -1,0 +1,26 @@
+.currentDonation_card{
+    box-shadow: #00000029 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 50px;
+    background-color: white;
+    padding: 2rem 5rem !important;
+}
+
+.cur_don_data{
+    border-radius: 0%;
+}
+
+.cur_don_data_1{
+    margin: 0rem 0rem;
+    border-right: solid 1px;
+    padding: 1rem 5rem !important;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+.cur_don_data_2{
+    margin: 0rem 0rem;
+    border-left: solid 1px;
+    padding: 1rem 5rem !important;
+    font-size: 130%;
+    font-weight: bold;
+}

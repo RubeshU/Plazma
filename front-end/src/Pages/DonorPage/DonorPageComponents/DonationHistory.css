@@ -1,0 +1,27 @@
+.don_his_data{
+    margin-bottom: 3rem;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: #00000029 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.don_his_data_1{
+    color: #761A19;
+    padding: 1rem 1rem !important;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.don_his_data_2{
+    color: #761A19;
+    padding: 1rem 1rem !important;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.don_his_data_3{
+    color: #761A19;
+    padding: 1rem 1rem !important;
+    font-size: 120%;
+    font-weight: bold;
+}
