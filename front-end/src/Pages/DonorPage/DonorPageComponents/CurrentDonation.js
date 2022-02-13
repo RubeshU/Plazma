@@ -1,34 +1,29 @@
 import "./CurrentDonation.css";
-import { Container, Row, Col} from "react-bootstrap";
+import { Container, Row, Col, Card} from "react-bootstrap";
 
 const CurrentDonation = () => {
     return (
         <Container className="currentDonation_card">
             <Container className="cur_don_data">
                 <Row>
-                    <Col className="cur_don_data_1">
+                    <Col md={6} sm={12} className="cur_don_data_1 bord">
                         <h2 style={{textAlign:"center",color: "#761A19",marginBottom: "1rem"}}>
                             Receptor</h2>
+                            <Container align="center" className="cur_don_data_1">
+                        <Card.Body>Rubesh U</Card.Body>
+                        <Card.Body>4 Units</Card.Body>
+                        <Card.Body>Gov Hospital</Card.Body>
+                        <Card.Body>Chennai</Card.Body>
+                    </Container>
                     </Col>
-                    <Col className="cur_don_data_2">
-                        <h2 style={{textAlign:"center",color: "#761A19",marginBottom: "1rem"}}>
+                    <Col md={6} sm={12} className="cur_don_data_2">
+                        <h2 style={{textAlign:"center",color: "#761A19"}}>
                             Contact
                         </h2>
-                    </Col>
-                </Row>
-            </Container>
-
-            <Container className="cur_don_data">
-                <Row>
-                    <Col align="center" className="cur_don_data_1">
-                        <p>Rubesh U</p>
-                        <p>4 Units</p>
-                        <p>Gov Hospital</p>
-                        <p>Chennai</p>
-                    </Col>
-                    <Col align="center" className="cur_don_data_2">
-                        <p>8828432915</p>
-                        <p>abc123@gmail.com</p>
+                        <Container align="center" className="cur_don_data_2">
+                        <Card.Body>8828432915</Card.Body>
+                        <Card.Body>abc123@gmail.com</Card.Body>
+                    </Container>
                     </Col>
                 </Row>
             </Container>

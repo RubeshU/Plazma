@@ -11,12 +11,14 @@ const YourProfile = () => {
                 </Col>
             </Row>
             
-            <h1 style={{textAlign:"center",color: "#761A19",marginBottom: "2rem"}}> Sudarsan M S</h1>
+            <h1 className="header" style={{textAlign:"center",color: "#761A19",marginBottom: "2rem"}}> Sudarsan M S</h1>
 
             <Container className="profile_data">
                 <Row>
-                    <Col align="center" className="profile_data_1"> 
+                    <Col align="center" className="profile_data_1">
+                        <Container> 
                         AGE
+                        </Container>
                     </Col>
                     <Col align="center" className="profile_data_2">
                         20
