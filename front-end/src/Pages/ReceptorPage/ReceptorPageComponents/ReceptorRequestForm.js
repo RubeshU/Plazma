@@ -3,8 +3,15 @@ import { Container, Card, Row, Col, Image,Form } from "react-bootstrap";
 import Logo from "../../../assets/Logo.png";
 import Input from "../../../Components/Input";
 import { labelInput } from "../../../Components/style";
-import { useRef, useState } from "react";
+import {  useEffect, useRef } from "react";
 import Button from "../../../Components/Button";
+import { receptorValidator } from "./ReceptorValidator";
+import {toast ,ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import {CircleLoader} from "react-spinners";
+
+import { useDispatch ,useSelector} from "react-redux";
+import { requestForBlood ,getReceptorState, clearState} from "../../../helpers/receptorSlice";
 
 const ReceptorRequestForm = () => {
   const name = useRef();  
@@ -16,22 +23,51 @@ const ReceptorRequestForm = () => {
   const mobileNo = useRef();
   const mailId = useRef();
   const conditionOfThePatient = useRef();
-  const [isReqButtonClicked,setIsReqButtonClicked] = useState(false);
+  const {requestStatus ,referenceId}  = useSelector(getReceptorState);
+
+  const getReceptor = () => {
+    return {
+      name: name.current.value,
+      age: age.current.value,
+      bloodType: bloodGroup.current.value,
+      city: city.current.value,
+      hospital: hospitalName.current.value,
+      units: noOfUnits.current.value,
+      mobileNo: mobileNo.current.value,
+      mailId: mailId.current.value,
+      description: conditionOfThePatient.current.value,
+    };
+  };
+
+  const dispatch = useDispatch();
 
   const requestHandler = () => {
-      console.log("Request button clicked");
-      setIsReqButtonClicked(true);
+      const receptor = getReceptor();
+      const errors = receptorValidator(receptor);
+      if(errors.length>0){
+        errors.forEach(element => {
+          toast.error(element);
+        });
+        return;
+      }
+      dispatch(requestForBlood(receptor));
   }
+
+  useEffect(() =>{
+    dispatch(clearState());
+  },[dispatch]);
 
   return (
     <Container className="mt-3">
+      <ToastContainer />
       <Container
         className={`d-flex flex-row align-items-center justify-content-center `}
         id={styles.card_body}
       >
         <Card className={styles.receptor_ip_card}>
-            {isReqButtonClicked && <div style={{color: "grey"}}>Your Receptor ID is : #DJKJ122DJ (Note this to check status for further) </div>} 
-          {!isReqButtonClicked && <Container>
+            {requestStatus==="fulfilled" && <div style={{color: "grey"}}>Your Receptor ID is : {referenceId} (Note this to check status for further) </div>} 
+            {requestStatus==="pending" && <CircleLoader color="#DB2F47" loading={true} /> }
+          {requestStatus==="" && <Container>
             <Container className="d-flex flex-column align-items-center">
               <Image fluid src={Logo} />
             </Container>
@@ -74,15 +110,15 @@ const ReceptorRequestForm = () => {
                 </Container>
               </Col>
               <Col md={6}>
-                <Form.Select ref={bloodGroup} className="mt-2" style={{color: "grey",width: "96%",marginLeft: "0.5rem"}}>
-                  <option>O POSITIVE</option>
-                  <option>O NEGATIVE</option>
-                  <option>A POSITIVE</option>
-                  <option>A NEGATIVE</option>
-                  <option>B POSITIVE</option>
-                  <option>B NEGATIVE</option>
-                  <option>AB POSITIVE</option>
-                  <option>AB NEGATIVE</option>
+                <Form.Select ref={bloodGroup} className="mt-2" style={{color: "grey",width: "93%",marginLeft: "0.5rem"}}>
+                  <option>O+</option>
+                  <option>O-</option>
+                  <option>A+</option>
+                  <option>A-</option>
+                  <option>B+</option>
+                  <option>B-</option>
+                  <option>AB+</option>
+                  <option>AB-</option>
                 </Form.Select>
              </Col>
             </Row>
