@@ -3,17 +3,31 @@ import Button from "../../../Components/Button";
 import JumbotronImg from "../HomeAssets/JumbotronImg.png";
 import styles from "./Jumbotron.module.css";
 import { useNavigate } from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import { autoLogin, getDonorState } from "../../../helpers/donorSlice";
+import { useEffect } from "react";
 
 const Jumbotron = () => {
+    const dispatch = useDispatch();
+    const {isLoggedIn} = useSelector(getDonorState);
     const navigate = useNavigate();
     const loginButtonHandler = () =>{
-        console.log("Login Button Clicked");
-        navigate("/login");
+        if(localStorage.getItem("token")!==null){
+            dispatch(autoLogin());
+        }else{
+            navigate("/login");
+        }
     }
     const registerButtonHandler = () =>{
-        console.log("Register Button Clicked");
         navigate("/register");
     }
+
+    useEffect(()=> {
+          if(isLoggedIn){
+              navigate("/donor/your-profile");
+          }
+    },[navigate,isLoggedIn]);
+
     return (
         <Container className={styles.jumbotron}>
             <Row>

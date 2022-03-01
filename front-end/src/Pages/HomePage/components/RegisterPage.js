@@ -5,14 +5,20 @@ import {  label, labelInput } from "../../../Components/style";
 import Button from "../../../Components/Button";
 import Logo from "../../../assets/Logo.png";
 import { useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import stylesIP from "../../../Components/Input.module.css";
+import {toast ,ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { donorValidate } from "./Donorvalidator";
+import {useDispatch,useSelector} from "react-redux";
+import {  clearState, getDonorState, register } from "../../../helpers/donorSlice";
+import {CircleLoader} from "react-spinners";
+
 
 const RegisterPage = () => {
   const navigate = useNavigate();
-  const registerHandler = () => {
-    navigate("/live-requests");
-  };
+  const {isLoggedIn,errorMsg,registerState} = useSelector(getDonorState);
+  const dispatch = useDispatch();
   const name = useRef("");
   const mobileNo = useRef("");
   const email = useRef("");
@@ -21,6 +27,43 @@ const RegisterPage = () => {
   const city = useRef("");
   const password = useRef("");
   const confirmPassword = useRef("");
+
+  const getDonor = () => {
+    return {
+      name: name.current.value,
+      mobileNo : mobileNo.current.value,
+      email : email.current.value,
+      dob: dob.current.value,
+      bloodGroup: bloodGroup.current.value,
+      city: city.current.value,
+      password: password.current.value,
+      profileImg : previewProfileFile,
+      idImg: previewIdFile,
+    }
+  }
+
+  const validate = () => {
+    if(password.current.value !== confirmPassword.current.value){
+      toast.error("please confirm your password!");
+    }
+    const donor = getDonor();
+    const errors = donorValidate(donor);
+    if(errors.length>0){
+      errors.forEach(element => {
+        toast.error(element);
+      });
+      return false;
+    }
+    return true;
+  }
+
+  const registerHandler = () => {
+   if(validate()){
+     const donor = getDonor();
+    dispatch(register(donor));
+   }    
+  
+  };
 
 
   const [previewProfileFile,setPreviewProfileFile] = useState(); 
@@ -42,10 +85,23 @@ const RegisterPage = () => {
       setPreviewIdFile(reader.result);
     }
   }
-  
+  useEffect(()=> {
+    if(isLoggedIn){
+      navigate("/donor/your-profile");
+    }
+    dispatch(clearState);
+  },[isLoggedIn,navigate,dispatch]);
+
+  useEffect(()=> {
+    if(errorMsg!==""){
+      toast.error("Error : "+errorMsg);
+    }
+  },[errorMsg]);
 
   return (
+    
     <div className={styles.register_bg}>
+      <ToastContainer />
       <Container
         className={`d-flex flex-row align-items-center justify-content-center ${styles.register_container}`}
         id={styles.card_body}
@@ -170,7 +226,7 @@ const RegisterPage = () => {
                 <Input
                   ref={password}
                   input={{
-                    type: "password",
+                    type: "text",
                     placeholder: "********",
                   }}
                 />
@@ -222,6 +278,7 @@ const RegisterPage = () => {
             <Container className="d-flex justify-content-end">
               <Button text="Register" on_click={registerHandler} />
             </Container>
+            {registerState==="pending" && <Container className="d-flex justify-content-center mt-4"><CircleLoader color="#DB2F47" loading={true} /> </Container>}
           </Container>
         </Card>
       </Container>

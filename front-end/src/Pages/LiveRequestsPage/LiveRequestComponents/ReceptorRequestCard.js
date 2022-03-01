@@ -5,9 +5,11 @@ import AgeIcon from "../LiveRequestAssets/AgeIcon.png";
 import HospitalIcon from "../LiveRequestAssets/HospitalIcon.png";
 
 const ReceptorRequestCard = (props) => {
-    const donateHandler = () => {
-        console.log("Donate handler clicked");
-    }
+ 
+  const donateHandler = () => {
+    
+    props.donate(props.donorId,props.data.status);
+  }
   return (
     <Container style={{marginTop: "4rem",marginBottom: "4rem"}}>
       <Container className={styles.border_one}>

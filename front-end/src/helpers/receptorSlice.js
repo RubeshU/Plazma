@@ -75,8 +75,10 @@ const receptorSlice = createSlice({
         state.check = "fulfilled";
         state.receptor = action.payload;
       },
-      [checkStatus.rejected]: (state) => {
+      [checkStatus.rejected]: (state,action) => {
         state.check = "rejected";
+        state.receptor = action.payload;
+        console.log(action.payload);
       },
       [getReceptors.pending]: (state) => {
         state.listStatus = "pending";
@@ -85,7 +87,8 @@ const receptorSlice = createSlice({
         state.listStatus = "fulfilled";
         state.receptors = action.payload;
       },
-      [getReceptors.rejected]: (state) => {
+      [getReceptors.rejected]: (state,action) => {
+        state.receptors = action.payload;
         state.listStatus = "rejected";
       }
   }

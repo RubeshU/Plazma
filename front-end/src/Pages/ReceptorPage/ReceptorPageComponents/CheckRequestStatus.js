@@ -43,6 +43,7 @@ const CheckRequestStatus = () => {
           <Button text="Check" on_click={onCheckHandler} />
         </Col>
       </Row>
+      {check==="rejected" && <p style={{margin: "40px",fontSize: "20px",textAlign:"center"}}>{receptor}</p>}
       {check==="pending" && <Container className="d-flex justify-content-center mt-4"><CircleLoader color="#DB2F47" loading={true} /> </Container>}
       {check==="fulfilled" && <Container className={styles.inner_card}>
         <Row>

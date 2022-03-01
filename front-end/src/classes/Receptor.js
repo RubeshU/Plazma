@@ -36,12 +36,17 @@ class Receptor{
                         referenceId,
                     })
                 });
+                if(!response.ok){
+                   await response.json().then((data) => {
+                       throw Error(data.error);
+                   });
+                }
                 await response.json().then((data) => {
                     resolve(data);
                 });
             }
             catch(error){
-                reject(error);
+                reject(error.message);
             }
         });
     }

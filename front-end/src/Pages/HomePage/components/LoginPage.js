@@ -1,24 +1,54 @@
 import styles from "./LoginPage.module.css";
 import Input from "../../../Components/Input";
-import { useRef } from "react";
+import { useRef ,useEffect} from "react";
 import { Container, Image, Card } from "react-bootstrap";
 import Button from "../../../Components/Button";
 import Logo from "../../../assets/Logo.png";
 import { label } from "../../../Components/style";
 import { useNavigate } from "react-router-dom";
+import {toast ,ToastContainer} from "react-toastify";
+import {useDispatch,useSelector} from "react-redux";
+import { clearState, getDonorState, login } from "../../../helpers/donorSlice";
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const {errorMsg,firstLog} = useSelector(getDonorState);
   const email = useRef("");
   const password = useRef("");
   const loginHandler = () => {
-    console.log("Login Handler Clicked");
-    navigate("/live-requests");
+    const errors = [];
+    if(email.current.value === ""){
+      errors.push("Invalid email");
+    }
+    if(password.current.value === ""){
+      errors.push("invalid password");
+    }
+    errors.forEach(element => {
+      toast.error(element);
+    });
+    if(errors.length===0){
+      dispatch(login({email: email.current.value,password: password.current.value}));
+    }
   };
+
+  useEffect(() => {
+    if(firstLog==="fulfilled"){
+      dispatch(clearState);
+      navigate("/donor/your-profile");
+    }
+  },[firstLog,navigate,dispatch]);
+
+  useEffect(() => {
+    if(errorMsg!==""){
+      toast.error(errorMsg);
+    }
+  },[errorMsg]);
 
   return (
     <>
       <div className={styles.login_bg}>
+        <ToastContainer />
         <Container
           className={`d-flex flex-row align-items-center justify-content-center ${styles.login_container}`}
           id={styles.card_body}

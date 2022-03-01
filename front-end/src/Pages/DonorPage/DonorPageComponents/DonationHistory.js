@@ -1,50 +1,38 @@
 import "./DonationHistory.css";
 import { Container, Row ,Col} from "react-bootstrap";
+import { useDispatch,useSelector } from "react-redux";
+import { clearState, getActionState, getHistory } from "../../../helpers/actionSlice";
+import { useEffect } from "react";
+import {CircleLoader} from "react-spinners";
 
 const DonationHistory = () => {
+
+    const dispatch = useDispatch();
+
+    const {error,loading,success,donationHistory} = useSelector(getActionState);
+    
+    useEffect(() => {
+        dispatch(clearState);
+        dispatch(getHistory());
+    },[dispatch]);
+
     return (
         <Container>
-            <Container className="don_his_data">
+            {error && <Container style={{borderRadius: "5px",fontSize: "1.5rem", backgroundColor: "#FFFFFF",padding: "3rem",textAlign: "center"}}>{error}</Container>}
+            {loading  && <Container className="d-flex flex-column align-items-center justify-content-center" style={{height: "500px",width: "500px"}}><CircleLoader color="#DB2F47" loading={true} size={100} /></Container>}
+            {success && donationHistory.map((element) => <Container key={element._id} className="don_his_data">
                 <Row>
                     <Col align="center" className="don_his_data_1"> 
-                        <font color="#E5697B">Donated to: </font>Vignesh K
+                        <font color="#E5697B">Donated to: </font>{element.name}
                     </Col>
                     <Col align="center" className="don_his_data_2">
-                        <font color="#E5697B">On: </font>12/02/2021
+                        <font color="#E5697B">On: </font>{element.date.substring(0,10)}
                     </Col>
                     <Col align="center" className="don_his_data_3">
-                        <font color="#E5697B">Units: </font>4
+                        <font color="#E5697B">Units: </font>{element.units}
                     </Col>
                 </Row>
-            </Container>
-
-            <Container className="don_his_data">
-                <Row>
-                    <Col align="center" className="don_his_data_1"> 
-                        <font color="#E5697B">Donated to: </font>Rubesh U
-                    </Col>
-                    <Col align="center" className="don_his_data_2">
-                        <font color="#E5697B">On: </font>30/6/2020
-                    </Col>
-                    <Col align="center" className="don_his_data_3">
-                        <font color="#E5697B">Units: </font>6
-                    </Col>
-                </Row>
-            </Container>
-
-            <Container className="don_his_data">
-                <Row>
-                    <Col align="center" className="don_his_data_1"> 
-                        <font color="#E5697B">Donated to: </font>Sudarsan M S
-                    </Col>
-                    <Col align="center" className="don_his_data_2">
-                        <font color="#E5697B">On: </font>17/5/2019
-                    </Col>
-                    <Col align="center" className="don_his_data_3">
-                        <font color="#E5697B">Units: </font>3
-                    </Col>
-                </Row>
-            </Container>
+            </Container> ) }
         </Container>
 
     );
