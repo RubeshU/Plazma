@@ -31,7 +31,7 @@ const Jumbotron = () => {
     return (
         <Container className={styles.jumbotron}>
             <Row>
-            <Col lg={6} sm={12} className="d-flex flex-column justify-content-center"> 
+            <Col lg={6} sm={12} className="mt-5 mb-5 d-flex flex-column justify-content-center"> 
             <h1>Sharing The Blood Of Your Life</h1>
             <div className="d-flex mt-4">
             <Button on_click={loginButtonHandler} text="Login" />

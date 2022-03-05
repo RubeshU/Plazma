@@ -56,4 +56,8 @@ const receptorSchema = mongoose.Schema({
     }  
 });
 
+receptorSchema.statics.findBloodGroup = async (donorId) => {
+    return await this.find({referenceId: donorId},{bloodType: true});
+}
+
 module.exports = mongoose.model("Receptor",receptorSchema);

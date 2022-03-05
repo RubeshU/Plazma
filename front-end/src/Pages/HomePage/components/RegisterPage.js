@@ -157,7 +157,7 @@ const RegisterPage = () => {
                   ref={email}
                   input={{
                     type: "text",
-                    placeholder: "abcd@gmai.com",
+                    placeholder: "abcd@gmail.com",
                   }}
                 />
               </Col>

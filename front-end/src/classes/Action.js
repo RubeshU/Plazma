@@ -27,6 +27,7 @@ class Action {
     getProfile(){
         return new Promise(async (resolve,reject) => {
             try{
+                if(localStorage.getItem("token")===null) return;
                 const response = await fetch("http://localhost:4000/plazma/donor/profile",{
                     method: "GET",
                     headers: {

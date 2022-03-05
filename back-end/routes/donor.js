@@ -3,6 +3,8 @@ const authenticateToken = require("../middleware/authenticateToken");
 
 const router = express.Router();
 
+const Receptor = require("../models/Receptor");
+
 router.post("/donate",authenticateToken,async (req,res) => {
     try{
         if(req.donor.currentDonation!==undefined){

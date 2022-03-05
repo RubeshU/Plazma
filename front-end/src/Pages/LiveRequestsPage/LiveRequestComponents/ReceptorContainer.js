@@ -49,10 +49,10 @@ const ReceptorContainer = () => {
     },[success,dispatch,donationStatus,navigate]);
 
     useEffect(() => {
-        if(error!==""){
+        if(error!=="" && error!=="No Current Donation available" && error!=="Currently no history of donations availabe!"){
             toast.error(error);
         }
-    },[error])
+    },[error]);
 
 
 
