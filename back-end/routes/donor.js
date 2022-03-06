@@ -1,4 +1,5 @@
 const express = require("express");
+const check = require("../check");
 const authenticateToken = require("../middleware/authenticateToken");
 
 const router = express.Router();
@@ -9,6 +10,13 @@ router.post("/donate",authenticateToken,async (req,res) => {
     try{
         if(req.donor.currentDonation!==undefined){
             return res.status(400).send({error: "You already have a pending donation"});
+        }
+        const donorType = req.donor.bloodGroup;
+        const receptorType = await Receptor.findOne({_id: req.body.donorId},{bloodType: true});
+        if(check(donorType,receptorType.bloodType)!==true){
+            console.log(donorType);
+            console.log(receptorType);
+            return res.status(400).send({error: "Blood Type Didn't match"});
         }
         req.donor.currentDonation = req.body.donorId;
         await req.donor.save();
