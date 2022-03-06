@@ -7,6 +7,7 @@ const authenticateToken = require("../middleware/authenticateToken");
 
 const Donor = require("../models/Donor");
 const brcrypt = require("bcrypt");
+const FeedBack = require("../models/FeedBack");
 
 router.post("/register", async (req, res) => {
   try {
@@ -71,5 +72,18 @@ router.post("/logout",authenticateToken,async (req,res) => {
     res.status(400).send({error: "couldn't logout"})
   }
 });
+
+
+router.post("/feedback",async (req,res) => {
+  try{
+    const feed = FeedBack(req.body);
+    await feed.save();
+    res.status(200).send({message: "Thank You for your feedback"});
+  }
+  catch(error){
+    res.status(400).send({error: "Failed sending feedback!"});
+  }
+});
+
 
 module.exports = router;
