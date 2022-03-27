@@ -82,7 +82,7 @@ const ReceptorRequestForm = () => {
                 ref={name}
                   input={{
                     type: "text",
-                    placeholder: "receptor name",
+                    placeholder: "acceptor name",
                   }}
                 />
               </Col>
@@ -98,7 +98,7 @@ const ReceptorRequestForm = () => {
                 ref={age}
                   input={{
                     type: "text",
-                    placeholder: "receptor age ex: 27",
+                    placeholder: "acceptor age ex: 27",
                   }}
                 />
               </Col>

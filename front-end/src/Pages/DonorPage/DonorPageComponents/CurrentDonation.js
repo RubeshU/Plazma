@@ -35,7 +35,7 @@ const CurrentDonation = () => {
                 <Row>
                     <Col md={6} sm={12} className="cur_don_data_1 bord">
                         <h2 style={{textAlign:"center",color: "#761A19",marginBottom: "1rem"}}>
-                            Receptor</h2>
+                            Acceptor</h2>
                             <Container align="center" className="cur_don_data_1">
                         <Card.Body>{currentDonation.name}</Card.Body>
                         <Card.Body>{currentDonation.units}</Card.Body>

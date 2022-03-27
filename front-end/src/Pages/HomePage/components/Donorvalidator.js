@@ -3,6 +3,9 @@ export const donorValidate = (donor) => {
     if(donor.name === ""){
         errors.push("please enter a valid name");
     }
+    if(isNaN(donor.mobileNo)){
+        errors.push("mobile number should not contain letters");
+    }
     if(donor.mobileNo === ""){
         errors.push("please enter a valid mobile number");
     }

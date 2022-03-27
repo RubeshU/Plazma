@@ -15,7 +15,7 @@ const Features = () => {
            <FeatureCard
             imageUrl="FeatureImg2.png"
             heading="Donate Blood"
-            text="Donate blood to your nearest receptors and connect with them"
+            text="Donate blood to your nearest acceptors and connect with them"
           />
           <FeatureCard
             imageUrl="FeatureImg3.png"

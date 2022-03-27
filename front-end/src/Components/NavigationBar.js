@@ -3,7 +3,6 @@ import Logo from "../assets/Logo.png";
 import classes from "./NavigationBar.module.css";
 import {NavLink} from "react-router-dom";
 import { NavActiveStyle, NavInActiveStyle } from './style';
-import ProfileDefault from '../assets/ProfileDefault.png';
 
 const NavigationBar = () => {
   return (
@@ -56,7 +55,7 @@ const NavigationBar = () => {
                   :NavInActiveStyle ;
               }}
             >
-              Receptor
+              Acceptor
             </NavLink>
             <NavLink
               to="/contact-us"
@@ -68,7 +67,6 @@ const NavigationBar = () => {
             >
               Contact Us
             </NavLink>
-            <Image className={classes.profile_default} fluid src={ProfileDefault} />
           </Nav>
         </Navbar.Collapse>
       </Container>

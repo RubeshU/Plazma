@@ -4,7 +4,7 @@ import ReceptorSection from "./ReceptorPageComponents/ReceptorSection";
 const ReceptorPage = () => {
     return (
         <>
-            <BreadCrumb title="Receptor Page" subtitle="Your droplets of blood may create an ocean of happiness"/>
+            <BreadCrumb title="Acceptor Page" subtitle="Your droplets of blood may create an ocean of happiness"/>
             <ReceptorSection />
         </>
     );
